@@ -1,0 +1,173 @@
+body {
+font-family : Courier;
+text-align : left;
+color : #000;
+margin : 0 0 0 0;
+background : #fff;
+-webkit-text-size-adjust: 100%;
+}
+
+a {
+text-decoration : none;
+color : #822;
+}
+
+a:hover {
+text-decoration : none;
+color : #a9a7a1;
+}
+
+.margin {
+height : 5em;
+}
+
+#frame {
+margin-left : auto;
+margin-right : auto;
+width : 42em;
+}
+
+#page table {
+border-spacing : 0;
+}
+
+#page td {
+padding : 0;
+}
+
+#page .noscript-invisible {
+display : none;
+}
+
+#page .noscript-hidden {
+visibility : hidden;
+}
+
+#page #title {
+margin-bottom : 1.5em;
+width : 100%;
+}
+
+#page #name {
+padding-bottom : 0.2em;
+padding-top : 0.5em;
+border-bottom-width : 1px;
+border-bottom-style : solid;
+border-bottom-color : #000;
+font-size : 160%;
+}
+
+#page #title img {
+display : block;
+width : 12em;
+height : 12em;
+border-width: 1px;
+border-style: solid;
+border-color: #000;
+}
+
+#page #title #position {
+margin-bottom: 0.5em;
+font-size : 130%;
+margin-top: 0.5em;
+}
+
+#page #title .inst {
+margin-bottom: 0.5em;
+padding-left: 2em;
+}
+
+#page .section-title {
+margin-bottom : 0.5em;
+font-size : 130%;
+margin-top: 1.5em;
+}
+
+#page .contact-title {
+font-size : 130%;
+}
+
+#page #contact {
+float : right;
+margin-left : 3em;
+margin-bottom : 2em;
+}
+
+#page .contact-info {
+margin-top : 0.5em;
+}
+
+#page .intro {
+margin-top : 0.5em;
+}
+
+#page #warning {
+padding-left : 0.5em;
+border-left-width : 5px;
+border-left-style : solid;
+border-left-color : #822;
+margin-top : 1em;
+}
+
+#page .paper {
+margin-top : 0.5em;
+}
+
+#page .paper-journal {
+margin-top : 0.1em;
+font-style : italic;
+}
+
+#page .toggle:hover {
+color : #a9a7a1;
+cursor : pointer;
+}
+
+#page .toggle .color {
+color : #822;
+}
+
+#page .toggle:hover .color {
+color : #a9a7a1;
+cursor : pointer;
+}
+
+#page .paper-link {
+margin-top : 0.1em;
+}
+
+#page .paper-ref {
+margin-top: 0.3em;
+}
+
+#page .abstract {
+display : none;
+padding-left : 1.2em;
+margin-top : 0.1em;
+margin-bottom : 1em;
+}
+
+#page .item {
+margin-top : 0.5em;
+}
+
+#page .teaching-info {
+display : none;
+padding-left : 1.2em;
+margin-bottom : 1.5em;
+}
+
+#page .hint {
+font-size : 70%;
+}
+
+#page .subsection{
+margin-top : 0.5em;
+margin-bottom : 0.1em;
+text-decoration : underline;
+}
+
+#page td.ref {
+vertical-align : top;
+padding-right : 0.5em;
+}

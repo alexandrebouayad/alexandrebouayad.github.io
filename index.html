@@ -1,0 +1,584 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+
+  <head>
+    <title>Alexandre Bouayad</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="author" content="Alexandre Bouayad">
+    <meta name="description" content="Alexandre Bouayad, Senior Research Associate, DPMMS, University of Cambridge">
+    <meta name="keywords" content="alexandre bouayad colored kac-moody algebras langlands duality">
+    <meta name="keywords" content="cambridge university dpmms research john's college fellow director studies pure mathematics">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+    <script type="text/javascript" src="javascript/jQuery/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="javascript/MathJax-2.5/MathJax.js?config=default"></script>
+
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+          (i[r].q = i[r].q || []).push(arguments)
+        },
+        i[r].l = 1*new Date();
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a,m)
+      })
+      (window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create','UA-70263001-1','auto');
+      ga('send', 'pageview');
+    </script>
+
+
+    <script type="text/javascript">
+      function hintErase(n) {
+        if (n > 0) {
+          $('.hint').text($('.hint').text().slice(0,-1));
+          n--;
+          setTimeout( function() {
+            hintErase(n)
+          }, 20);
+        };
+      };
+
+      $(document).ready( function() { 
+        $(document).find('#page .noscript-visible').css('display','none');
+        $(document).find('#page .noscript-invisible').css('display','inline');
+        $(document).find('#page .noscript-hidden').css('visibility','visible');
+
+        $(document).scroll( function() {
+          var hscroll = $('#test').offset().top - $('#page').offset().top - $('.margin').height();
+          var hframe = $('#frame').height();
+          var hpage = $('#page').height();
+          // window.status = hscroll+' '+hframe+' '+hpage;
+          if (hscroll < hframe) {
+            $('#frame').height(Math.max(hscroll,hpage));
+          };
+        });
+
+        $('.toggle.contact').click( function() {
+          var arr = jQuery('.arr',this);
+          if (arr.text() == '>>') {
+            $(arr).html('<<');
+          }
+          else {
+            $(arr).html('>>');
+          };
+          $('#contact').toggle(200, function() {
+            var hpage = $('#page').height();
+            var hframe = $('#frame').height();
+            if (hframe <= hpage) { $('#frame').height(hpage); };
+          });
+        });
+
+        $('.toggle.abs').click( function() {
+          var abs = this.id;
+          $('#toggle-'+abs).toggle(200, function () {
+            var hpage = $('#page').height();
+            var hframe = $('#frame').height();
+            if (hframe <= hpage) { $('#frame').height(hpage); };
+          });
+        });
+
+        $('.toggle.teach').click( function() {
+          var teach = this.id;
+          var arr = jQuery('.color',this);
+          if (arr.text() == '>') {
+            $(arr).html('&#8744;');
+          }
+          else {
+            $(arr).html('>');
+          };
+          $('#toggle-'+teach).toggle(200, function() {
+            var hpage = $('#page').height();
+            var hframe = $('#frame').height();
+            if (hframe <= hpage) { $('#frame').height(hpage); };
+          });
+          var n = $('.hint').text().length;
+          if (n > 0) {
+            setTimeout( function() {
+              hintErase($('.hint').text().length);
+            }, 400);
+          };
+        });
+      });
+    </script>
+  </head>
+
+
+  <body>
+
+    <div class="margin"></div>
+
+    <div id="frame"><div id="page">
+
+      <table id="title">
+        <tr>
+          <td style="width:100%; padding-right:3.5em">
+            <div id="name">
+              Alexandre Bouayad
+            </div>
+            <div id="position">
+              Senior Research Associate
+            </div>
+          </td>
+          <td rowspan="2" align="right" valign="top">
+            <img src="img/photo.png" alt="portrait">
+          </td>
+        </tr>
+        <tr>
+          <td valign="bottom" style="padding-top:1em">
+            <div class="inst">
+              Department of Pure Mathematics<br>
+              &nbsp; and Mathematical Statistics
+            </div>
+            <div class="inst">
+              University of Cambridge
+            </div>
+            <div class="inst noscript-hidden">
+              <span class="toggle contact"><span class="color"><span class="arr">>></span> Contact details</span></span>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <div id="contact" class="noscript-visible">
+          Department of Pure Mathematics<br>
+          &nbsp; and Mathematical Statistics<br>
+          Centre for Mathematical<br>
+          &nbsp; Sciences<br>
+          University of Cambridge<br>
+          Wilberforce Road<br>
+          Cambridge CB3 0WB<br>
+          United Kingdom<br>
+
+        <div class="contact-info">
+          alexandre.bouayad AT gmx.com
+        </div>
+      </div>
+
+      <div class="intro">
+        I am a Senior Research Associate at <a href="https://www.dpmms.cam.ac.uk">DPMMS</a> (University of Cambridge).
+        I am also a Fellow of <a href="http://www.joh.cam.ac.uk">St John's College</a>, where I am Director of Studies in Pure Mathematics.
+      </div>
+      <div class="intro">
+        <span style="text-decoration:underline">Research interests</span>:
+        representation theory, Lie theory, quantum groups, deformation theory, geometric Langlands correspondence.
+      </div>
+      <div id="warning" class="noscript-visible">
+        Warning. You do not appear to have javascript enabled. This website requires javascript to work properly.
+      </div>
+
+
+      <div class="section-title" style="text-decoration:underline">Publications & Preprints</div>
+      <div class="paper">
+        Coloured Kac-Moody algebras, Part I
+        <span class="noscript-visible">[<a href="papers/Coloured_I.pdf">PDF</a>]</span>
+        <div class="paper-journal">arXiv:1412.8606 (2014)</div>
+        <div class="paper-link">
+           <span class="noscript-invisible">[<span class="toggle abs" id="abs-3"><span class="color">Abstract</span></span>]
+           [<a href="papers/Coloured_I.pdf">PDF</a>]
+          </span>
+        </div>
+        <div id="toggle-abs-3" class="abstract">
+          We introduce a parametrization of formal deformations of Verma modules of $\mathfrak{sl}_2$. A point in the moduli space is called a colouring.
+          We prove that for each colouring $\psi$ satisfying a regularity condition, there is a formal deformation $U_h(\psi)$ of $U(\mathfrak{sl}_2)$ acting on the deformed Verma modules.
+          We retrieve in particular the quantum algebra $U_h(\mathfrak{sl}_2)$ from a colouring by $q$-numbers.
+          More generally, we establish that regular colourings parametrize a broad family of formal deformations of the Chevalley-Serre presentation of $U(\mathfrak{sl}_2)$.
+          The present paper is the first of a series aimed to lay the foundations of a new approach to deformations of Kac-Moody algebras and of their representations.
+          We will employ in a forthcoming paper coloured Kac-Moody algebras to give a positive answer to E. Frenkel and D. Hernandez’s conjectures on Langlands duality in quantum group theory.
+        </div>
+      </div>
+
+      <div class="paper">
+        Groupes quantiques d’interpolation de Langlands de rang 1
+        <span class="noscript-visible">[<a href="papers/gqil.pdf">PDF</a>]</span>
+        <div class="paper-journal">Int. Math. Res. Not. IRMN 2013, No. 6, 1268-1323 (2013)</div>
+        <div class="paper-link">
+          <span class="noscript-invisible">
+            [<span class="toggle abs" id="abs-1"><span class="color">Abstract</span></span>]
+            [<a href="papers/gqil.pdf">PDF</a>]
+          </span>
+        </div>
+        <div id="toggle-abs-1" class="abstract">
+          We study a certain family, parameterized by an positive integer $g$, of double deformations of the envelopping algebra $U(\mathfrak{sl}_2)$, in the spirit of
+          E. Frenkel and D. Hernandez [1]. We prove that each of these double deformations simultaneously deforms two rank 1 quantum groups. We show this interpolating
+          property explains the Langlands duality for the representations of the quantum groups in rank 1. Hence we prove a conjecture of E. Frenkel and D. Hernandez in this case:
+          we prove for all g the existence of representations which simultaneously deform two Langlands dual representations. We also study more generaly the finite rank representation
+          theory of this family of double deformations.
+          <table class="paper-ref">
+            <tr>
+              <td class="ref">[1]</td>
+              <td>Frenkel, E.; Hernandez, D., 'Langlands duality for representations of quantum groups', Math. Ann. 349, No. 3, 705–746 (2011).</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="paper">
+        Generalized quantum enveloping algebras, coloured Kac-Moody algebras and Langlands interpolation
+        <div class="paper-journal">
+          PhD thesis, Université Paris VII (2013)
+        </div>
+        <div class="paper-link">
+          <span class="noscript-invisible">
+            [<span class="toggle abs" id="abs-2"><span class="color">Abstract</span></span>]
+          </span>
+        </div>
+        <div id="toggle-abs-2" class="abstract">
+          We propose in this thesis a new deformation process of Kac-Moody algebras and their representations.
+          The direction of deformation is given by a collection of numbers, called a <span style="font-style : italic">colouring</span>.
+          The natural numbers lead for example to the classical algebras, while the quantum numbers lead to the associated quantum algebras.<br>
+          We first establish sufficient and necessary conditions on colourings to allow the process depend polynomially on a formal parameter and to provide the
+          <i>generalised quantum enveloping (GQE) algebras</i>. We then lift the restrictions and show that the process still exists via the <i>coloured Kac-Moody algebras</i>.<br>
+          We formulate the <i>GQE conjecture</i> which predicts that every representation in the category $\mathcal O$ integrable of a Kac-Moody algebra can be deformed into a
+          representation of an associated GQE algebra. We give various evidences for this conjecture and make a first step towards its resolution by proving that Kac-Moody algebras
+          without Serre relations can be deformed into GQE algebras without Serre relations.<br>
+          In case the conjecture holds, we establish an analog result for coloured Kac-Moody algebras, we prove that the deformed representation theories are parallel to the classical one,
+          we explicit a deformed Serre presentation for GQE algebras, we prove that the latter are the representatives of a natural class of formal deformations of Kac-Moody algebras
+          and are trivial in finite type. As an application, we explain in terms of interpolation both classical and quantum Langlands dualities between representations of Lie algebras,
+          and we propose a new approach which aims at proving a conjecture of Frenkel-Hernandez.<br>
+          In general, we prove that representations of two isogenic coloured Kac-Moody algebras can be interpolated by representations of a third one.
+          Observing that standard quantum algebras satisfy the GQE conjecture, we give a new proof of the previously mentioned classical Langlands duality
+          (the first proofs are due to Littelmann and McGerty).
+        </div>
+      </div>
+
+
+      <div class="section-title" style="text-decoration:underline">Curriculum Vitae</div>
+      <div class="item">2013-present: Research Associate, University of Cambridge</div>
+      <div class="item">2013-present: Fellow, St John's College, Cambridge</div>
+      <div class="item">Fall 2012: Post Doctoral Fellow, Harvard University</div>
+      <div class="item">2009-13: PhD Student, Université Paris VII</div>
+      <div class="item">2008-10: École Polytechnique</div>
+      <div class="item">2005-09: École Normale Supérieure de Lyon</div>
+      <div class="item">2003-05: Lycée Hoche, classes préparatoires</div>
+
+
+      <div class="section-title">
+        <span style="text-decoration:underline">Teaching</span>
+        <span class="hint noscript-invisible">{click on the lines for more information}</span>
+      </div>
+
+      <div class="item">
+        <div class="toggle teach" id="teach-7">
+          <span class="color noscript-invisible">></span>
+          Quasi-categories and Model Categories (Internship, Summer 2017)
+        </div>
+        <div id="toggle-teach-7" class="teaching-info">
+          ---------------<br>
+          MIT International Research Program
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="toggle teach" id="teach-6">
+          <span class="color noscript-invisible">></span>
+          2-Kac-Moody Algebras (Part III Essay, Lent 2016)
+        </div>
+        <div id="toggle-teach-6" class="teaching-info">
+          ---------------<br>
+          The aim of this essay is to give an account of 2-Kac-Moody algebras, and of their representation theory.
+          A 2-Kac-Moody algebra is a 2-category, obtained by "doubling" a categorification of one half of a Kac-Moody algebra $\mathfrak g$.
+          The categorication in question consists in a monoidal category $\mathcal B$, where quiver Hecke algebras associated to a same quiver $\Gamma$ are put together.
+          Quiver Hecke algebras have been introduced by Khovanov, Lauda and Rouquier, and are sometimes also called KLR algebras. Geometric methods are available in the
+          case of symmetrizable Kac-Moody algebras. Namely, the monoidal category $\mathcal B$ is equivalent to Lusztig's category of perverse sheaves on the moduli space
+          of representations of the quiver $\Gamma$, and projective modules for the quiver Hecke algebras in characteristic zero relate to the canonical basis of the
+          quantised Kac-Moody algebra $U_q(\mathfrak g)$.
+          <div class="subsection">Relevant courses</div>
+          'Lie Algebras and their Representations', 'Introduction to Category Theory' are recommended.<br>
+          'Representation Theory', 'Topics on Category Theory', 'Algebraic Geometry' can be helpful.
+          <div class="subsection">References</div>
+          <table>
+            <tr>
+              <td class="ref">[1]</td>
+              <td>
+                Beilinson, A.; Bernstein, J.; Deligne, P., 'Faisceaux pervers', Analysis and topology on singular spaces I (Luminy, 1981), Astérisque 100, 5-171
+                (Soc. Math. France, Paris, 1982).
+              </td>
+            </tr>
+            <tr>
+              <td class="ref">[2]</td>
+              <td>Lusztig, G., 'Canonical bases arising from quantized enveloping algebras', J. Amer. Math. Soc. 3, No. 2, 447-498 (1990).</td>
+            </tr>
+            <tr>
+              <td class="ref">[3]</td>
+              <td>Khovanov, M.; Lauda, A., 'A diagrammatic approach to categorification of quantum groups I', Represent. Theory 13, 309-347 (2009).</td>
+            </tr>
+            <tr>
+              <td class="ref">[4]</td>
+              <td>Khovanov, M.; Lauda, A., 'A diagrammatic approach to categorification of quantum groups II', Trans. Amer. Math. Soc. 363, No. 5, 2685-2700 (2011).</td>
+            </tr>
+            <tr>
+              <td class="ref">[5]</td>
+              <td>Rouquier, R., '2-Kac-Moody algebras', arXiv:0812.5023 (2008).</td>
+            </tr>
+            <tr>
+              <td class="ref">[6]</td>
+              <td>Rouquier, R., 'Quiver Hecke algebras and 2-Lie algebras', Algebra Colloq. 19, No. 2, 359-410 (2012).</td>
+            </tr>
+            <tr>
+              <td class="ref">[7]</td>
+              <td>Varagnolo, M.; Vasserot, E., 'Canonical bases and KLR algebras', J. Reine Angew. Math. 659, 67-100 (2011).</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="toggle teach" id="teach-5">
+          <span class="color noscript-invisible">></span>
+          Feigin-Frenkel Theorem (Part III Essay, Lent 2016)
+        </div>
+        <div id="toggle-teach-5" class="teaching-info">
+          ---------------<br>
+          The local Langlands correspondence is a profound conjecture in the representation theory of a reductive group $G(F)$ over $p$-adic numbers and their extensions.
+          It predicts a parametrisation for smooth representations in terms of Langlands parameters, which are roughly representations of the absolute Galois group $\mathrm{Gal}(\bar F/F)$
+          into the Langlands dual group $G^\vee$. In the local geometric Langlands correspondence, $p$-adics are replaced with the field $\mathbb C((t))$ of Laurent series in one complex
+          variable. This geometric analogue involves replacing the $p$-adic group $G(F)$ with the loop algebra $\mathfrak g \otimes \mathbb C((t))$ (for $\mathfrak g$ a complex semisimple
+          Lie algebra), and with its central extension $\hat{\mathfrak g}$ which is an affine Kac-Moody algebra. The Langlands parameters in the geometric setting become
+          $G^\vee$-connections over the punctured disc $\mathrm{Spec} \, \mathbb C((t))$. The aim of this essay is to give an account of the fundamental discovery of Feigin and Frenkel
+          (resolving a conjecture of Drinfel'd), namely that the enveloping algebra of $\hat{\mathfrak g}$ acting at the critical level has a huge center, analogous to the Harish-Chandra
+          center for $U(\mathfrak g)$, and that this center is canonically identified with functions on the space of $G^\vee$-opers on the punctured disc.
+          <div class="subsection">Relevant courses</div>
+          'Algebraic Geometry' is recommended.<br>
+          'Lie Algebras and their Representations', 'Introduction to Category Theory' can be helpful.
+          <div class="subsection">References</div>
+          <table>
+            <tr>
+              <td class="ref">[1]</td>
+              <td>
+                Feigin, B.; Frenkel, E., 'Affine Kac-Moody algebras at the critical level and Gelfand-Dikii algebras', Infinite analysis, Part A, B (Kyoto, 1991)}, Adv. Ser. Math. Phys. 16,
+                197-215 (World Sci. Publ., River Edge, NJ, 1992).
+              </td>
+            </tr>
+            <tr>
+              <td class="ref">[2]</td>
+              <td>Frenkel, E., 'Langlands correspondence for loop groups', Cambridge Studies in Advanced Mathematics 103 (Cambridge University Press, Cambridge, 2007).</td>
+            </tr>
+            <tr>
+              <td class="ref">[3]</td>
+              <td>Frenkel, E., 'Wakimoto modules, opers and the center at the critical level', Adv. Math. 195, No. 2, 297-404 (2005).</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="toggle teach" id="teach-4">
+          <span class="color noscript-invisible">></span>
+          Geometric Satake Equivalence (Part III Essay, Lent 2016)
+        </div>
+        <div id="toggle-teach-4" class="teaching-info">
+          ---------------<br>
+          This aim of this essay is to give an account of the geometric Satake equivalence, which is one of the cornerstones of the geometric Langlands correspondence.
+          The connected complex reductive groups have a combinatorial classification by their root data. In a root datum, the roots and the coroots appear in a symmetric manner,
+          and so the connected reductive algebraic groups come in pairs. The companion of a reductive group $G$ is the so-called Langlands dual group $G^\vee$. The geometric Satake
+          equivalence is an equivalence between the category of representations of $G$ and the category of spherical perverse sheaves on the complex affine Grassmannian associated
+          to the dual group $G^\vee$. This constitutes a geometric version of the classical Satake isomorphism. One can view this result also as a remarkable construction of the
+          Langlands dual group $G^\vee$ in terms of the group $G$ that does not refer to the underlying root data.
+          <div class="subsection">Relevant courses</div>
+          'Algebraic Geometry', 'Introduction to Category Theory' are recommended.<br>
+          'Topics on Category Theory' can be helpful.
+          <div class="subsection">References</div>
+          <table>
+            <tr>
+              <td class="ref">[1]</td>
+              <td>
+                Beilinson, A.; Bernstein, J.; Deligne, P., 'Faisceaux pervers', Analysis and topology on singular spaces I (Luminy, 1981), Astérisque 100, 5-171
+                (Soc. Math. France, Paris, 1982).
+              </td>
+            </tr>
+            <tr>
+              <td class="ref">[2]</td>
+              <td>
+                Beilinson, A.; Drinfeld, V., 'Quantization of Hitchin's integrable system and Hecke eigensheaves',
+                <a href="http://www.math.uchicago.edu/~mitya/langlands/hitchin/BD-hitchin.pdf">pdf</a> (1991).
+              </td>
+            </tr>
+            <tr>
+              <td class="ref">[3]</td>
+              <td>
+                Deligne, P.; Milne, J., 'Tannakian Categories', Hodge cycles, motives, and Shimura varieties, Lecture Notes in Mathematics 900, 101-228
+                (Springer-Verlag, Berlin-New York, 1982).
+              </td>
+            </tr>
+            <tr>
+              <td class="ref">[4]</td>
+              <td>
+                Gross, B., 'On the Satake isomorphism', Galois representations in arithmetic algebraic geometry (Durham, 1996)}, London Math. Soc. Lecture Note Ser. 254, 223-237
+                (Cambridge Univ. Press, Cambridge, 1998).
+              </td>
+            </tr>
+            <tr>
+              <td class="ref">[5]</td>
+              <td>Humphreys, J., 'Linear algebraic groups', Graduate Texts in Mathematics, No. 21 (Springer-Verlag, New York-Heidelberg, 1975).</td>
+            </tr>
+            <tr>
+              <td class="ref">[6]</td>
+              <td>Mirkovic, I; Vilonen, K., 'Geometric Langlands duality and representations of algebraic groups over commutative rings', Ann. of Math. (2) 166, No. 1, 95-143 (2007).</td>
+            </tr>
+            <tr>
+              <td class="ref">[7]</td>
+              <td>Richarz, T., 'A new approach to the geometric Satake equivalence', Doc. Math 19, 209-246 (2014).</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="toggle teach" id="teach-3">
+          <span class="color noscript-invisible">></span>
+          Infinite dimensional Lie Algebras (Graduate Course, Lent 2015)
+        </div>
+        <div id="toggle-teach-3" class="teaching-info">
+          ---------------<br>
+          The aim of this course is to give an introduction to Kac-Moody algebras and their representations, to present some applications of the theory, and to have a look at the
+          quantum counterpart. Kac-Moody algebras are infinite-dimensional analogs of semisimple Lie algebras, and we will first study the structure of these algebras in general.
+          The first significant examples will be the affine Lie algebras. These algebras have another realisation; namely they are central extensions of loop algebras, and therefore
+          have important applications in theoretical physics. We will precise the relations with the Virasoro and the Heisenberg algebras, and we will study the category of
+          finite-dimensional representations of an affine Lie algebra. By construction, an affine algebra has a central element, which then acts as a scalar (called level) on every
+          simple representation. We will look at a certain category formed by representations with fixed level, describe the fusion product within this category, and present
+          applications to the Knizhnik-Zamolodchikov equations. Quantum groups (or to be more precise, quantized enveloping algebras in this course) are quantum analogs of semisimple
+          Lie algebras, and more generally of Kac-Moody algebras. If time permits, we will define these objects, study their representation theory (with an emphasis again on the affine
+          case, which should lead us to the so-called $q$-characters), and discusss the relations between representations of classical and quantum affine algebras.
+          <div class="subsection">Pre-requisites</div>
+          Essential: 'Lie algebras and their representations'.
+          Useful: 'Representation theory'.
+          <div class="subsection">References</div>
+          <table>
+            <tr>
+              <td class="ref">[1]</td>
+              <td>Chari, V.; Pressley, A., 'A guide to quantum groups' (Cambridge University Press, Cambridge, 1995).</td>
+            </tr>
+            <tr>
+              <td class="ref">[2]</td>
+              <td>
+                Etingof, P.; Frenkel, I.; Kirillov, A., 'Lectures on representation theory and Knizhnik-Zamolodchikov equations',
+                Mathematical Surveys and Monographs 58 (American Mathematical Society, Providence, RI, 1998).
+              </td>
+            </tr>
+            <tr>
+              <td class="ref">[3]</td>
+              <td>
+                Frenkel, E.; Ben-Zvi, D., 'Vertex algebras and algebraic curves', Mathematical Surveys and Monographs 88 (American Mathematical Society, Providence, RI, 2004).
+              </td>
+            </tr>
+            <tr>
+              <td class="ref">[4]</td>
+              <td>Frenkel, E., 'Langlands correspondence for loop groups', Cambridge Studies in Advanced Mathematics 103 (Cambridge University Press, Cambridge, 2007).</td>
+            </tr>
+            <tr>
+              <td class="ref">[5]</td>
+              <td>J. Humphreys, 'Introduction to Lie algebras and representation theory', Graduate Texts in Mathematics 9 (Springer-Verlag, New York-Berlin, 1978).</td>
+            </tr>
+            <tr>
+              <td class="ref">[6]</td>
+              <td>Jantzen, J., 'Lectures on Quantum Groups', Graduate Studies in Mathematics 6 (American Mathematical Society, Providence, RI, 1996).</td>
+            </tr>
+            <tr>
+              <td class="ref">[7]</td>
+              <td>Kac, V., 'Infinite-dimensional Lie algebras' (Cambridge University Press, Cambridge, 1990).</td>
+            </tr>
+            <tr>
+              <td class="ref">[8]</td>
+              <td>Serre, J-P., 'Lie algebras and Lie groups', 1964 lectures given at Harvard University, Lecture Notes in Mathematics 1500 (Springer-Verlag, Berlin, 2006).</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="toggle teach" id="teach-2">
+          <span class="color noscript-invisible">></span>
+          Infinite dimensional Lie Algebras (Part III Essay, Lent 2014)
+        </div>
+        <div id="toggle-teach-2" class="teaching-info">
+          ---------------<br>
+          The aim of this essay is to give an introduction to Kac-Moody algebras and their representations, present some applications of the theory, and have a look at the quantum side.
+          You will start from the Serre presentation of complex semisimple Lie algebras, together with the celebrated Cartan-Killing classification by Cartan matrices (this material has
+          been covered in the course 'Lie algebras and their representations'). Kac-Moody algebras are infinite-dimensional analogs of semisimple Lie algebras; they also admit a Serre
+          presentation, associated to generalised Cartan matrices. You will first investigate the structure of Kac-Moody algebras, and their representation theory (the category $\mathcal O$).
+          The "first" infinite-dimensional Kac-Moody algebras are said affine. An affine algebra $\hat{\mathfrak g}$ can be realised as a central extension of the loop algebra of a semisimple
+          Lie algebra $\mathfrak g$. Thanks to this description, you will learn more about $\hat{\mathfrak g}$, precise the relations with the Virasoro algebras and the Heisenberg algebras,
+          and study the category of finite-dimensional representations of $\hat{\mathfrak g}$. By construction, the affine algebra $\hat{\mathfrak g}$ has a central element, which then acts as
+          a scalar (called level) on every simple representation. Going back to the category $\mathcal O$ of $\hat{\mathfrak g}$, you will focus on the subcategory $\mathcal O_k$ formed by the
+          representations with fixed level $k$, and experience once again the richness of the representation theory of affine algebras. Affine Kac-Moody algebras provide a perfect example
+          where abstract mathematical motivations lead to objects which are closely related to other fields as Mathematical Physics. You will eventually study more advanced topics, as the
+          fusion product within the category $\mathcal O_k$, and applications to Knizhnik-Zamolodchikov equations. Quantum groups are quantum analogs of semisimple Lie algebras. If time
+          permits, you will learn about the quantized enveloping algebra $U_q(\mathfrak g)$, investigate its representation theory, and look at the relations between between representations
+          of (classical) affine algebras and representation of quantum groups. Affine algebras also admit a quantization. Again, if time permits, you may be interested in the
+          finite-dimensional representation theory of quantum affine algebras: classification of simple representations by the Drinfeld polynomials, the Grothendieck ring, and the
+          $q$-characters.
+          <div class="subsection">Relevant courses</div>
+          Essential: 'Lie algebras and their representations'.
+          Useful: 'Representation theory'.
+          <div class="subsection">References</div>
+          <table>
+            <tr>
+              <td class="ref">[1]</td>
+              <td>Chari, V.; Pressley, A., 'A guide to quantum groups' (Cambridge University Press, Cambridge, 1995).</td>
+            </tr>
+            <tr>
+              <td class="ref">[2]</td>
+              <td>
+                Etingof, P.; Frenkel, I.; Kirillov, A., 'Lectures on representation theory and Knizhnik-Zamolodchikov equations',
+                Mathematical Surveys and Monographs 58 (American Mathematical Society, Providence, RI, 1998).
+              </td>
+            </tr>
+            <tr>
+              <td class="ref">[3]</td>
+              <td>
+                Frenkel, E.; Ben-Zvi, D., 'Vertex algebras and algebraic curves', Mathematical Surveys and Monographs 88 (American Mathematical Society, Providence, RI, 2004).
+              </td>
+            </tr>
+            <tr>
+              <td class="ref">[4]</td>
+              <td>Frenkel, E., 'Langlands correspondence for loop groups', Cambridge Studies in Advanced Mathematics 103 (Cambridge University Press, Cambridge, 2007).</td>
+            </tr>
+            <tr>
+              <td class="ref">[5]</td>
+              <td>J. Humphreys, 'Introduction to Lie algebras and representation theory', Graduate Texts in Mathematics 9 (Springer-Verlag, New York-Berlin, 1978).</td>
+            </tr>
+            <tr>
+              <td class="ref">[6]</td>
+              <td>Jantzen, J., 'Lectures on Quantum Groups', Graduate Studies in Mathematics 6 (American Mathematical Society, Providence, RI, 1996).</td>
+            </tr>
+            <tr>
+              <td class="ref">[7]</td>
+              <td>Kac, V., 'Infinite-dimensional Lie algebras' (Cambridge University Press, Cambridge, 1990).</td>
+            </tr>
+            <tr>
+              <td class="ref">[8]</td>
+              <td>Serre, J-P., 'Lie algebras and Lie groups', 1964 lectures given at Harvard University, Lecture Notes in Mathematics 1500 (Springer-Verlag, Berlin, 2006).</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="toggle teach" id="teach-1">
+          <span class="color noscript-invisible">></span>
+          Classes and supervisions in Pure Mathematics (Parts IA, IB & II)
+        </div>
+        <div id="toggle-teach-1" class="teaching-info">
+          ---------------<br>
+          St John's College
+        </div>
+      </div>
+      </div>
+
+    </div></div>
+
+    <div class="margin"></div>
+    <div id="test" style="position : fixed; bottom : 0"></div>
+
+  </body>
+
+</html>

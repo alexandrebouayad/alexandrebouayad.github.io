@@ -24,7 +24,7 @@ height : 5em;
 #frame {
 margin-left : auto;
 margin-right : auto;
-width : 42em;
+width : 52em;
 }
 
 #page table {
@@ -51,9 +51,9 @@ width : 100%;
 #page #name {
 padding-bottom : 0.2em;
 padding-top : 0.5em;
-border-bottom-width : 1px;
+border-bottom-width : 0.5px;
 border-bottom-style : solid;
-border-bottom-color : #000;
+border-bottom-color : #a9a7a1;
 font-size : 160%;
 }
 
